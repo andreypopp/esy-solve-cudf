@@ -1,0 +1,35 @@
+{
+  "name": "esy",
+  "version": "0.0.1",
+  "description": "Solver command for esy based on mccs",
+  "license": "GPLv3",
+  "esy": {
+    "build": [
+      "jbuilder build -j 4"
+    ],
+    "install": [
+      "esy-installer"
+    ],
+    "buildsInSource": "_build"
+  },
+  "dependencies": {
+    "@esy-ocaml/esy-installer": "^0.0.0",
+    "@opam/cmdliner": "^1.0.2",
+    "@opam/jbuilder": "^1.0.0-beta18",
+    "@opam/cudf": "*",
+    "@opam/mccs": "*"
+  },
+  "resolutions": {
+    "**/@opam/sexplib0": "100000000.11.0",
+    "**/@opam/result": "1.2.0",
+    "**/@opam/lwt": "3.3.0",
+    "**/@opam/ocaml-migrate-parsetree": "1.0.10"
+  },
+  "peerDependencies": {
+    "ocaml": "~4.6.0"
+  },
+  "devDependencies": {
+    "@esy-ocaml/merlin": "*",
+    "ocaml": "~4.6.0"
+  }
+}
