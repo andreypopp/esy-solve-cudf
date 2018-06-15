@@ -4,14 +4,14 @@ set -e
 set -u
 set -o pipefail
 
-TARGET=esySolveCommand.exe
+TARGET=esySolveCudfCommand.exe
 
 case $(uname) in
   Darwin*)
-    mv esySolveCommandDarwin.exe "$TARGET"
+    mv esySolveCudfCommandDarwin.exe "$TARGET"
     ;;
   Linux*)
-    mv esySolveCommandLinux.exe "$TARGET"
+    mv esySolveCudfCommandLinux.exe "$TARGET"
     ;;
   *)
     echo "Unsupported operating system $(uname), exiting...";

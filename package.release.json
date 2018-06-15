@@ -1,6 +1,6 @@
 {
   "bin": {
-    "esy-solve-cudf": "esySolveCommand.exe"
+    "esy-solve-cudf": "esySolveCudfCommand.exe"
   },
   "scripts": {
     "postinstall": "bash ./postinstall.sh"

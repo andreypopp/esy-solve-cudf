@@ -22,9 +22,9 @@ clean::
 	@rm -rf _build
 
 RELEASE_ROOT = $(PWD)/_release
-RELEASE_FILES = esySolveCommand.exe \
-                esySolveCommandDarwin.exe \
-                esySolveCommandLinux.exe \
+RELEASE_FILES = esySolveCudfCommand.exe \
+                esySolveCudfCommandDarwin.exe \
+                esySolveCudfCommandLinux.exe \
                 package.json \
                 LICENSE \
                 postinstall.sh
@@ -47,15 +47,15 @@ build-release:
 	@mkdir $(RELEASE_ROOT)
 	@$(MAKE) $(RELEASE_FILES:%=$(RELEASE_ROOT)/%)
 
-$(RELEASE_ROOT)/esySolveCommand.exe:
+$(RELEASE_ROOT)/esySolveCudfCommand.exe:
 	@echo "#!/bin/bash\necho 'error: esy-solve is installed incorrectly'" > $(@)
 	@chmod +x $(@)
 
-$(RELEASE_ROOT)/esySolveCommandLinux.exe: build-linux
-	@cp scripts/docker-build/esySolveCommand.exe $(@)
+$(RELEASE_ROOT)/esySolveCudfCommandLinux.exe: build-linux
+	@cp scripts/docker-build/esySolveCudfCommand.exe $(@)
 
-$(RELEASE_ROOT)/esySolveCommandDarwin.exe: build
-	@cp _build/default/bin/esySolveCommand.exe $(@)
+$(RELEASE_ROOT)/esySolveCudfCommandDarwin.exe: build
+	@cp _build/default/bin/esySolveCudfCommand.exe $(@)
 
 define MAKE_PACKAGE_JSON
 let esyJson = require('./package.json');
@@ -79,4 +79,4 @@ $(RELEASE_ROOT)/%: %
 	@cp $(<) $(@)
 
 build-linux:
-	@make BUILDOUT=bin/esySolveCommand.exe -C scripts/docker-build build
+	@make BUILDOUT=bin/esySolveCudfCommand.exe -C scripts/docker-build build

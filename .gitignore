@@ -1,6 +1,6 @@
-esy-solve.install
+esy-solve-cudf.install
 .merlin
 _build
 _release
 node_modules
-scripts/docker-build/esySolveCommand.exe
+scripts/docker-build/esySolveCudfCommand.exe

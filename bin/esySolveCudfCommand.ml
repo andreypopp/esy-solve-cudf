@@ -45,9 +45,9 @@ module CommandLineInterface = struct
   let strategy =
     let doc = "Specifies optimization criteria to use." in
     Arg.(
-      required
-      & pos 0 (some string) None
-      & info [] ~doc ~docv:"STRATEGY"
+      value
+      & opt (some string) None
+      & info ["strategy"; "s"] ~docs ~doc ~docv:"STRATEGY"
     )
 
   let filename =
@@ -62,7 +62,7 @@ module CommandLineInterface = struct
     let doc = "Solve CUDF dependency problem" in
     let info = Term.info "esy-solve" ~version ~doc ~sdocs ~exits in
     let cmd timeout strategy filename =
-      Solver.runWithFilename ?timeout ~strategy filename
+      Solver.runWithFilename ?timeout ?strategy filename
     in
     Term.(ret (const cmd $ timeout $ strategy $ filename)), info
 
