@@ -54,7 +54,7 @@ module CommandLineInterface = struct
     let doc = "Path to CUDF document file to solve." in
     Arg.(
       required
-      & pos 1  (some file) None
+      & pos 0  (some file) None
       & info [] ~doc ~docv:"PATH"
     )
 
