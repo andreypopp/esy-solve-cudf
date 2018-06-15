@@ -1,4 +1,6 @@
 esy-solve.install
 .merlin
 _build
+_release
 node_modules
+scripts/docker-build/esySolveCommand.exe
