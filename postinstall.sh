@@ -11,7 +11,7 @@ case $(uname) in
     mv esySolveCommandDarwin.exe "$TARGET"
     ;;
   Linux*)
-    mv esySolveCommandDarwin.exe "$TARGET"
+    mv esySolveCommandLinux.exe "$TARGET"
     ;;
   *)
     echo "Unsupported operating system $(uname), exiting...";
