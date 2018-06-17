@@ -19,7 +19,7 @@ docker-image-id:
 	@echo "linux-build: preparing docker image..."
 	@docker build -q . > $(@)
 
-esy: prepare docker-image-id
+esy: docker-image-id prepare
 	@echo "linux-build: running build in docker container..."
 	@docker run \
 		--volume $(HOME)/.esy-linux:/root/.esy \
