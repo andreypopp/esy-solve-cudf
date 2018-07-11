@@ -1,6 +1,12 @@
 module Solver = struct
   let runWithFilename ?(timeout=5.) ?(strategy="-notuptodate") filename =
-    let preamble, univ, req = Cudf_parser.load_from_file filename in
+    match Cudf_parser.load_from_file filename with
+    | exception Cudf_parser.Parse_error (message, (ls, _le)) ->
+      let message =
+        Printf.sprintf "%s (at line %i)" message ls.Lexing.pos_lnum
+      in
+      `Error (false, message)
+    | preamble, univ, req ->
     let preamble =
       match preamble with
       | Some preamble -> preamble
