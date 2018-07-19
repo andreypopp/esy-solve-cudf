@@ -1,9 +1,11 @@
 .DEFAULT_GOAL: bootstrap
 .DELETE_ON_ERROR:
 
-RELEASE_TAG ?= latest
+PLATFORM = $(shell uname | tr '[A-Z]' '[a-z]')
+VERSION = $(shell node -p "require('./package.json').version")
+NPM_RELEASE_TAG ?= latest
+ESY_RELEASE_TAG ?= v$(VERSION)
 ESY_EXT := $(shell command -v esy 2> /dev/null)
-BIN = $(PWD)/node_modules/.bin
 
 b:: build-dev
 build-dev::
@@ -21,47 +23,72 @@ endif
 clean::
 	@rm -rf _build
 
-RELEASE_ROOT = $(PWD)/_release
-RELEASE_FILES = esySolveCudfCommand.exe \
-                esySolveCudfCommandDarwin.exe \
-                esySolveCudfCommandLinux.exe \
-                package.json \
-                LICENSE \
-                postinstall.sh
+#
+# Platform Specific Release
+#
 
-publish: build-release
-	@(cd $(RELEASE_ROOT) && npm publish --access public --tag $(RELEASE_TAG))
-	@git push && git push --tags
+PLATFORM_RELEASE_NAME = _platformrelease/esy-solve-cudf-$(ESY_RELEASE_TAG)-$(PLATFORM).tgz
+PLATFORM_RELEASE_ROOT = _platformrelease/$(PLATFORM)
+PLATFORM_RELEASE_FILES = \
+	esySolveCudfCommand.exe
 
-bump-major-version:
-	@npm version major
+platform-release: $(PLATFORM_RELEASE_NAME)
 
-bump-minor-version:
-	@npm version minor
+$(PLATFORM_RELEASE_NAME)::
+	@echo "Creating $(PLATFORM_RELEASE_NAME)"
+	@rm -rf $(PLATFORM_RELEASE_ROOT)
+	@$(MAKE) $(PLATFORM_RELEASE_FILES:%=$(PLATFORM_RELEASE_ROOT)/%)
+	@tar czf $(@) -C $(PLATFORM_RELEASE_ROOT) .
+	@rm -rf $(PLATFORM_RELEASE_ROOT)
 
-bump-patch-version:
-	@npm version patch
+$(PLATFORM_RELEASE_ROOT)/esySolveCudfCommand.exe: _build/default/bin/esySolveCudfCommand.exe
+	@mkdir -p $(@D)
+	@cp $(<) $(@)
 
-build-release:
+#
+# Release
+#
+
+RELEASE_ROOT = _release
+RELEASE_FILES = \
+	esySolveCudfCommand.exe \
+	postinstall.js \
+	LICENSE \
+	README.md \
+	package.json
+
+release:
+	@echo "Creating $(ESY_RELEASE_TAG) release"
 	@rm -rf $(RELEASE_ROOT)
-	@mkdir $(RELEASE_ROOT)
-	@$(MAKE) $(RELEASE_FILES:%=$(RELEASE_ROOT)/%)
+	@mkdir -p $(RELEASE_ROOT)
+	@$(MAKE) -j $(RELEASE_FILES:%=$(RELEASE_ROOT)/%)
 
 $(RELEASE_ROOT)/esySolveCudfCommand.exe:
-	@echo "#!/bin/bash\necho 'error: esy-solve is installed incorrectly'" > $(@)
+	@mkdir -p $(@D)
+	@echo "#!/bin/sh\necho 'error: esy-solve-cudf is not installed correctly...'; exit 1" > $(@)
 	@chmod +x $(@)
 
-$(RELEASE_ROOT)/esySolveCudfCommandLinux.exe: build-linux
-	@cp scripts/docker-build/esySolveCudfCommand.exe $(@)
-
-$(RELEASE_ROOT)/esySolveCudfCommandDarwin.exe: build
-	@cp _build/default/bin/esySolveCudfCommand.exe $(@)
+$(RELEASE_ROOT)/platform-linux $(RELEASE_ROOT)/platform-darwin: PLATFORM=$(@:$(RELEASE_ROOT)/platform-%=%)
+$(RELEASE_ROOT)/platform-linux $(RELEASE_ROOT)/platform-darwin:
+	@mkdir $(@)
+	@wget \
+		-q --show-progress \
+		-O $(RELEASE_ROOT)/$(PLATFORM).tgz \
+		'https://github.com/andreypopp/esy-solve-cudf/releases/download/$(ESY_RELEASE_TAG)/esy-solve-cudf-$(ESY_RELEASE_TAG)-$(PLATFORM).tgz'
+	@tar -xzf $(RELEASE_ROOT)/$(PLATFORM).tgz -C $(@)
+	@rm $(RELEASE_ROOT)/$(PLATFORM).tgz
 
 define MAKE_PACKAGE_JSON
 let esyJson = require('./package.json');
-let packageJson = require('./package.release.json');
 console.log(JSON.stringify(Object.assign(
-  packageJson,
+	{
+		"bin": {
+			"esy-solve-cudf": "esySolveCudfCommand.exe"
+		},
+		"scripts": {
+			"postinstall": "node ./postinstall.js"
+		}
+	},
 	{
 		name: esyJson.name,
 		version: esyJson.version,
@@ -72,11 +99,9 @@ console.log(JSON.stringify(Object.assign(
 endef
 export MAKE_PACKAGE_JSON
 
-$(RELEASE_ROOT)/package.json: package.release.json
+$(RELEASE_ROOT)/package.json:
 	@node -e "$$MAKE_PACKAGE_JSON" > $(@)
 
-$(RELEASE_ROOT)/%: %
+$(RELEASE_ROOT)/%: $(PWD)/%
+	@mkdir -p $(@D)
 	@cp $(<) $(@)
-
-build-linux:
-	@make BUILDOUT=bin/esySolveCudfCommand.exe -C scripts/docker-build build

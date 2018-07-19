@@ -1,8 +1,0 @@
-{
-  "bin": {
-    "esy-solve-cudf": "esySolveCudfCommand.exe"
-  },
-  "scripts": {
-    "postinstall": "node ./postinstall.js"
-  }
-}

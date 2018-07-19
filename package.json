@@ -15,15 +15,9 @@
   "dependencies": {
     "@esy-ocaml/esy-installer": "^0.0.0",
     "@opam/cmdliner": "^1.0.2",
-    "@opam/jbuilder": "^1.0.0-beta18",
+    "@opam/jbuilder": "*",
     "@opam/cudf": "*",
     "@opam/mccs": "*"
-  },
-  "resolutions": {
-    "**/@opam/sexplib0": "100000000.11.0",
-    "**/@opam/result": "1.2.0",
-    "**/@opam/lwt": "3.3.0",
-    "**/@opam/ocaml-migrate-parsetree": "1.0.10"
   },
   "peerDependencies": {
     "ocaml": "~4.6.0"
