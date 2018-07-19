@@ -7,8 +7,7 @@ const destinationFilePath = path.join(__dirname, 'esySolveCudfCommand.exe');
 const install = (filename) => {
   const srcFilename = path.join(__dirname, `platform-${platform}`, filename);
   const dstFilename = path.join(__dirname, filename);
-  fs.copyFileSync(srcFilename, dstFilename);
-  fs.unlinkSync(srcFilename);
+  fs.renameSync(srcFilename, dstFilename);
 }
 
 switch (platform) {
