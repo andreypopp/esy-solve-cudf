@@ -1,5 +1,7 @@
 # esy-solve-cudf
 
+[![Build Status](https://travis-ci.com/andreypopp/esy-solve-cudf.svg?branch=master)](https://travis-ci.com/andreypopp/esy-solve-cudf)
+
 CUDF solver used by [esy][]. Based on [mccs][].
 
 ## Release
