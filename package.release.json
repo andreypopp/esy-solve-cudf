@@ -3,6 +3,6 @@
     "esy-solve-cudf": "esySolveCudfCommand.exe"
   },
   "scripts": {
-    "postinstall": "bash ./postinstall.sh"
+    "postinstall": "node ./postinstall.js"
   }
 }
