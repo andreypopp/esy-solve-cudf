@@ -51,6 +51,8 @@ $(PLATFORM_RELEASE_ROOT)/esySolveCudfCommand.exe: _build/default/bin/esySolveCud
 
 RELEASE_ROOT = _release
 RELEASE_FILES = \
+	platform-linux \
+	platform-darwin \
 	esySolveCudfCommand.exe \
 	postinstall.js \
 	LICENSE \
