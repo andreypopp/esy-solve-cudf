@@ -1,3 +1,4 @@
+const fs = require("fs");
 const path = require("path");
 
 const destinationFilePath = path.join(__dirname, "esySolveCudfCommand.exe");
