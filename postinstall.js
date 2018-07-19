@@ -1,29 +1,23 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const destinationFilePath = path.join(__dirname, "esySolveCudfCommand.exe");
+const platform = process.platform;
+const destinationFilePath = path.join(__dirname, 'esySolveCudfCommand.exe');
 
-const copySolverExecutable = (sourceFile) => {
-    const sourceFilePath = path.join(__dirname, sourceFile);
-    fs.copyFileSync(sourceFilePath, destinationFilePath);
-    fs.unlinkSync(sourceFilePath);
+const install = (filename) => {
+  const srcFilename = path.join(__dirname, `platform-${platform}`, filename);
+  const dstFilename = path.join(__dirname, filename);
+  fs.copyFileSync(srcFilename, dstFilename);
+  fs.unlinkSync(srcFilename);
 }
 
-const setExecutablePermission = () => {
-    // Set executable permission
-    fs.chmodSync(destinationFilePath, 0755);
-}
-
-switch (process.platform) {
-    case "linux":
-        copySolverExecutable("esySolveCudfCommandLinux.exe");
-        setExecutablePermission();
-        break
-    case "darwin":
-        copySolverExecutable("esySolveCudfCommandDarwin.exe");
-        setExecutablePermission();
-        break;
-    default:
-        console.warn("[esy-solve-cudf] Unsupported operating system; dependent commands may not function correctly")
-        break;
+switch (platform) {
+  case 'linux':
+  case 'darwin':
+    install('esySolveCudfCommand.exe');
+    fs.chmodSync(path.join(__dirname, 'esySolveCudfCommand.exe'), 0755);
+    break
+  default:
+    console.warn('[esy-solve-cudf] Unsupported operating system; dependent commands may not function correctly')
+    break;
 }
