@@ -1,5 +1,5 @@
 {
-  "hash": "c9c952535ed5f37b2d9f5334a1a3682c",
+  "hash": "a7020a9e668d387dc22a6f931eabb026",
   "root": "esy-solve-cudf@path:.",
   "node": {
     "ocaml@4.6.4": {
@@ -211,7 +211,7 @@
       },
       "dependencies": [
         "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/dune@opam:1.0.0", "@opam/ocamlfind@opam:1.8.0"
+        "@opam/dune@opam:1.0.1", "@opam/ocamlfind@opam:1.8.0"
       ]
     },
     "@opam/extlib-compat@opam:1.7.2": {
@@ -284,18 +284,18 @@
         "@opam/jbuilder@opam:transition"
       ]
     },
-    "@opam/dune@opam:1.0.0": {
+    "@opam/dune@opam:1.0.1": {
       "record": {
         "name": "@opam/dune",
-        "version": "opam:1.0.0",
+        "version": "opam:1.0.1",
         "source": [
-          "archive:https://opam.ocaml.org/archives/dune.1.0.0+opam.tar.gz#md5:397ad11c1fe9ee2b926208c0455f5107",
-          "archive:https://github.com/ocaml/dune/releases/download/1.0.0/dune-1.0.0.tbz#md5:7435bc09a3967bf6da01e6cb7d37ccc3"
+          "archive:https://opam.ocaml.org/archives/dune.1.0.1+opam.tar.gz#md5:bcfdd66662b5306c42ca8185deb39862",
+          "archive:https://github.com/ocaml/dune/releases/download/1.0.1/dune-1.0.1.tbz#md5:7f6c56aa5a9043afb7b0dd313887c7c9"
         ],
         "files": [],
         "opam": {
           "name": "dune",
-          "version": "1.0.0",
+          "version": "1.0.1",
           "opam":
             "opam-version: \"1.2\"\nmaintainer: \"opensource@janestreet.com\"\nauthors: \"Jane Street Group, LLC <opensource@janestreet.com>\"\nlicense: \"MIT\"\nhomepage: \"https://github.com/ocaml/dune\"\nbug-reports: \"https://github.com/ocaml/dune/issues\"\nconflicts: [\n  \"jbuilder\" {!= \"transition\"}\n]\navailable: ocaml-version >= \"4.02.3\"\nbuild: [\n  [\"ocaml\" \"configure.ml\" \"--libdir\" lib]\n  [\"ocaml\" \"bootstrap.ml\"]\n  [\"./boot.exe\" \"--release\" \"--subst\"] {pinned}\n  [\"./boot.exe\" \"--release\" \"-j\" jobs]\n]\ndev-repo: \"git+https://github.com/ocaml/dune.git\"",
           "override": null

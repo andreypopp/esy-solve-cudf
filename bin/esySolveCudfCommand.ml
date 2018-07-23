@@ -20,6 +20,10 @@ module Solver = struct
       | Some req -> req
       | None -> Cudf.default_request
     in
+
+    let oc = open_out filenameOut in
+    let out = IO.output_channel oc in
+
     let solution =  Mccs.resolve_cudf
       ~verbose:false
       ~timeout
@@ -27,20 +31,17 @@ module Solver = struct
       (preamble, univ, req)
     in
 
-    match solution with
-    | Some solution ->
-      let oc = open_out filenameOut in
-      let out = IO.output_channel oc in
-      Cudf_printer.pp_io_solution out solution;
-      IO.flush out;
-      IO.close_out out;
-      close_out oc;
-      `Ok ()
-    | None ->
-      let oc = open_out filenameOut in
-      output_string oc "\n";
-      close_out oc;
-      `Ok ()
+    let () =
+      match solution with
+      | Some solution -> Cudf_printer.pp_io_solution out solution;
+      | None -> IO.write out '\n'
+    in
+
+    IO.flush out;
+    IO.close_out out;
+    close_out oc;
+
+    `Ok ()
 end
 
 module CommandLineInterface = struct
