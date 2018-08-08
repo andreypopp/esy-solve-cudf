@@ -1,5 +1,5 @@
 {
-  "hash": "a7020a9e668d387dc22a6f931eabb026",
+  "hash": "0a9b700223175b33e93ca4308ec3d852",
   "root": "esy-solve-cudf@path:.",
   "node": {
     "ocaml@4.6.4": {
@@ -46,9 +46,9 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/biniou@opam:1.2.0", "@opam/cppo@opam:1.6.4",
-        "@opam/easy-format@opam:1.3.1", "@opam/jbuilder@opam:transition"
+        "@esy-ocaml/substs@0.0.1", "@opam/biniou@opam:1.2.0",
+        "@opam/cppo@opam:1.6.4", "@opam/easy-format@opam:1.3.1",
+        "@opam/jbuilder@opam:transition"
       ]
     },
     "@opam/topkg@opam:0.9.1": {
@@ -69,9 +69,8 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/ocamlbuild@opam:0.12.0", "@opam/ocamlfind@opam:1.8.0",
-        "@opam/result@opam:1.3"
+        "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
+        "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3"
       ]
     },
     "@opam/result@opam:1.3": {
@@ -92,8 +91,7 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/jbuilder@opam:transition"
+        "@esy-ocaml/substs@0.0.1", "@opam/jbuilder@opam:transition"
       ]
     },
     "@opam/ocamlfind@opam:1.8.0": {
@@ -147,10 +145,7 @@
           }
         }
       },
-      "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/conf-m4@opam:1"
-      ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1", "@opam/conf-m4@opam:1" ]
     },
     "@opam/ocamlbuild@opam:0.12.0": {
       "record": {
@@ -169,9 +164,7 @@
           "override": null
         }
       },
-      "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1"
-      ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1" ]
     },
     "@opam/mccs@opam:1.1+8": {
       "record": {
@@ -191,8 +184,8 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/cudf@opam:0.9", "@opam/jbuilder@opam:transition"
+        "@esy-ocaml/substs@0.0.1", "@opam/cudf@opam:0.9",
+        "@opam/jbuilder@opam:transition"
       ]
     },
     "@opam/jbuilder@opam:transition": {
@@ -210,8 +203,8 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/dune@opam:1.0.1", "@opam/ocamlfind@opam:1.8.0"
+        "@esy-ocaml/substs@0.0.1", "@opam/dune@opam:1.1.0",
+        "@opam/ocamlfind@opam:1.8.0"
       ]
     },
     "@opam/extlib-compat@opam:1.7.2": {
@@ -233,33 +226,8 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/base-bytes@opam:base", "@opam/cppo@opam:1.6.4",
-        "@opam/ocamlfind@opam:1.8.0"
-      ]
-    },
-    "@opam/extlib@opam:1.7.5": {
-      "record": {
-        "name": "@opam/extlib",
-        "version": "opam:1.7.5",
-        "source": [
-          "archive:https://opam.ocaml.org/archives/extlib.1.7.5+opam.tar.gz#md5:1b20f7a67db6e310249773ad08080f59",
-          "archive:http://ygrek.org.ua/p/release/ocaml-extlib/extlib-1.7.5.tar.gz#md5:d989951536077563bf4c5e3479c3866f",
-          "archive:https://github.com/ygrek/ocaml-extlib/releases/download/1.7.5/extlib-1.7.5.tar.gz#md5:d989951536077563bf4c5e3479c3866f"
-        ],
-        "files": [],
-        "opam": {
-          "name": "extlib",
-          "version": "1.7.5",
-          "opam":
-            "opam-version: \"1.2\"\nmaintainer: \"ygrek@autistici.org\"\nauthors: [\n  \"Nicolas Cannasse\"\n  \"Brian Hurt\"\n  \"Yamagata Yoriyuki\"\n  \"Markus Mottl\"\n  \"Jesse Guardiani\"\n  \"John Skaller\"\n  \"Bardur Arantsson\"\n  \"Janne Hellsten\"\n  \"Richard W.M. Jones\"\n  \"ygrek\"\n  \"Gabriel Scherer\"\n  \"Pietro Abate\"\n]\nlicense: \"LGPL-2.1 with OCaml linking exception\"\nhomepage: \"https://github.com/ygrek/ocaml-extlib\"\ndoc: \"http://ygrek.org.ua/p/extlib/doc/\"\nbug-reports: \"https://github.com/ygrek/ocaml-extlib/issues\"\ndepends: [\n  \"ocamlfind\" {build}\n  \"cppo\" {build}\n  \"base-bytes\" {build}\n]\nbuild: [make \"minimal=1\" \"build\"]\nrun-test: [make \"minimal=1\" \"test\"]\ninstall: [make \"minimal=1\" \"install\"]\nremove: [\"ocamlfind\" \"remove\" \"extlib\"]\ndev-repo: \"git://github.com/ygrek/ocaml-extlib.git\"\nbuild-doc: [make \"minimal=1\" \"doc\"]",
-          "override": null
-        }
-      },
-      "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/base-bytes@opam:base", "@opam/cppo@opam:1.6.4",
-        "@opam/ocamlfind@opam:1.8.0"
+        "@esy-ocaml/substs@0.0.1", "@opam/base-bytes@opam:base",
+        "@opam/cppo@opam:1.6.4", "@opam/ocamlfind@opam:1.8.0"
       ]
     },
     "@opam/easy-format@opam:1.3.1": {
@@ -280,30 +248,32 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/jbuilder@opam:transition"
+        "@esy-ocaml/substs@0.0.1", "@opam/jbuilder@opam:transition"
       ]
     },
-    "@opam/dune@opam:1.0.1": {
+    "@opam/dune@opam:1.1.0": {
       "record": {
         "name": "@opam/dune",
-        "version": "opam:1.0.1",
+        "version": "opam:1.1.0",
         "source": [
-          "archive:https://opam.ocaml.org/archives/dune.1.0.1+opam.tar.gz#md5:bcfdd66662b5306c42ca8185deb39862",
-          "archive:https://github.com/ocaml/dune/releases/download/1.0.1/dune-1.0.1.tbz#md5:7f6c56aa5a9043afb7b0dd313887c7c9"
+          "archive:https://opam.ocaml.org/archives/dune.1.1.0+opam.tar.gz#md5:055d9677bef62fe9cc320bae216e1cea",
+          "archive:https://github.com/ocaml/dune/releases/download/1.1.0/dune-1.1.0.tbz#md5:a5e8b1b0b1b5fbd2a1af99c1959d65c5"
         ],
         "files": [],
         "opam": {
           "name": "dune",
-          "version": "1.0.1",
+          "version": "1.1.0",
           "opam":
             "opam-version: \"1.2\"\nmaintainer: \"opensource@janestreet.com\"\nauthors: \"Jane Street Group, LLC <opensource@janestreet.com>\"\nlicense: \"MIT\"\nhomepage: \"https://github.com/ocaml/dune\"\nbug-reports: \"https://github.com/ocaml/dune/issues\"\nconflicts: [\n  \"jbuilder\" {!= \"transition\"}\n]\navailable: ocaml-version >= \"4.02.3\"\nbuild: [\n  [\"ocaml\" \"configure.ml\" \"--libdir\" lib]\n  [\"ocaml\" \"bootstrap.ml\"]\n  [\"./boot.exe\" \"--release\" \"--subst\"] {pinned}\n  [\"./boot.exe\" \"--release\" \"-j\" jobs]\n]\ndev-repo: \"git+https://github.com/ocaml/dune.git\"",
-          "override": null
+          "override": {
+            "build": [
+              [ "ocaml", "bootstrap.ml" ],
+              [ "./boot.exe", "--release", "-j", "4" ]
+            ]
+          }
         }
       },
-      "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1"
-      ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1" ]
     },
     "@opam/cudf@opam:0.9": {
       "record": {
@@ -323,8 +293,7 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/conf-perl@opam:1", "@opam/extlib@opam:1.7.5",
+        "@esy-ocaml/substs@0.0.1", "@opam/conf-perl@opam:1",
         "@opam/extlib-compat@opam:1.7.2", "@opam/ocamlbuild@opam:0.12.0"
       ]
     },
@@ -346,9 +315,8 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/base-bytes@opam:base", "@opam/base-unix@opam:base",
-        "@opam/jbuilder@opam:transition"
+        "@esy-ocaml/substs@0.0.1", "@opam/base-bytes@opam:base",
+        "@opam/base-unix@opam:base", "@opam/jbuilder@opam:transition"
       ]
     },
     "@opam/conf-which@opam:1": {
@@ -365,9 +333,7 @@
           "override": null
         }
       },
-      "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1"
-      ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1" ]
     },
     "@opam/conf-perl@opam:1": {
       "record": {
@@ -383,9 +349,7 @@
           "override": null
         }
       },
-      "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1"
-      ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1" ]
     },
     "@opam/conf-m4@opam:1": {
       "record": {
@@ -401,9 +365,7 @@
           "override": null
         }
       },
-      "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1"
-      ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1" ]
     },
     "@opam/cmdliner@opam:1.0.2": {
       "record": {
@@ -423,9 +385,9 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/ocamlbuild@opam:0.12.0", "@opam/ocamlfind@opam:1.8.0",
-        "@opam/result@opam:1.3", "@opam/topkg@opam:0.9.1"
+        "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
+        "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3",
+        "@opam/topkg@opam:0.9.1"
       ]
     },
     "@opam/biniou@opam:1.2.0": {
@@ -446,9 +408,8 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/conf-which@opam:1", "@opam/easy-format@opam:1.3.1",
-        "@opam/jbuilder@opam:transition"
+        "@esy-ocaml/substs@0.0.1", "@opam/conf-which@opam:1",
+        "@opam/easy-format@opam:1.3.1", "@opam/jbuilder@opam:transition"
       ]
     },
     "@opam/base-unix@opam:base": {
@@ -465,9 +426,7 @@
           "override": null
         }
       },
-      "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1"
-      ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1" ]
     },
     "@opam/base-bytes@opam:base": {
       "record": {
@@ -484,8 +443,7 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
-        "@opam/ocamlfind@opam:1.8.0"
+        "@esy-ocaml/substs@0.0.1", "@opam/ocamlfind@opam:1.8.0"
       ]
     },
     "@esy-ocaml/substs@0.0.1": {
