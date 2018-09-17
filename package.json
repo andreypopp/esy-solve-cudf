@@ -20,7 +20,7 @@
     "@opam/mccs": "*"
   },
   "resolutions": {
-    "@opam/mccs": "github:bryphe/ocaml-mccs#f728b80"
+    "@opam/mccs": "github:bryphe/ocaml-mccs#c5a8906"
   },
   "peerDependencies": {
     "ocaml": "~4.6.0"
