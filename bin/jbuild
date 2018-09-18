@@ -4,4 +4,5 @@
  ((name esySolveCudfCommand)
   (package esy-solve-cudf)
   (public_name esy-solve-cudf)
+  (flags ("-ccopt" "-lgcc_s"))
   (libraries (cudf mccs cmdliner))))

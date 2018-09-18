@@ -19,6 +19,9 @@
     "@opam/cudf": "*",
     "@opam/mccs": "*"
   },
+  "resolutions": {
+    "@opam/mccs": "github:bryphe/ocaml-mccs#c5a8906"
+  },
   "peerDependencies": {
     "ocaml": "~4.6.0"
   },
