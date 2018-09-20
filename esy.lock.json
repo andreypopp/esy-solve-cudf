@@ -2,12 +2,12 @@
   "hash": "0a9b700223175b33e93ca4308ec3d852",
   "root": "esy-solve-cudf@path:.",
   "node": {
-    "ocaml@4.6.5": {
+    "ocaml@4.6.6": {
       "record": {
         "name": "ocaml",
-        "version": "4.6.5",
+        "version": "4.6.6",
         "source":
-          "archive:https://registry.npmjs.org/ocaml/-/ocaml-4.6.5.tgz#sha1:23b6d4dc36437f431c427953a5236447e7b51368",
+          "archive:https://registry.npmjs.org/ocaml/-/ocaml-4.6.6.tgz#sha1:769f01e91dd1492b17420fdb00be14dda3451134",
         "files": [],
         "opam": null
       },
@@ -25,7 +25,7 @@
         "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/merlin@3.0.5005",
         "@opam/cmdliner@opam:1.0.2", "@opam/cudf@opam:0.9",
         "@opam/jbuilder@opam:transition", "@opam/mccs@opam:1.1+8",
-        "ocaml@4.6.5"
+        "ocaml@4.6.6"
       ]
     },
     "@opam/yojson@opam:1.4.1": {
@@ -46,7 +46,7 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/biniou@opam:1.2.0",
         "@opam/cppo@opam:1.6.5", "@opam/easy-format@opam:1.3.1",
-        "@opam/jbuilder@opam:transition", "ocaml@4.6.5"
+        "@opam/jbuilder@opam:transition", "ocaml@4.6.6"
       ]
     },
     "@opam/topkg@opam:0.9.1": {
@@ -66,7 +66,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
-        "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3", "ocaml@4.6.5"
+        "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3", "ocaml@4.6.6"
       ]
     },
     "@opam/result@opam:1.3": {
@@ -86,7 +86,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/jbuilder@opam:transition",
-        "ocaml@4.6.5"
+        "ocaml@4.6.6"
       ]
     },
     "@opam/ocamlfind@opam:1.8.0": {
@@ -152,7 +152,7 @@
         }
       },
       "dependencies": [
-        "@esy-ocaml/substs@0.0.1", "@opam/conf-m4@opam:1", "ocaml@4.6.5"
+        "@esy-ocaml/substs@0.0.1", "@opam/conf-m4@opam:1", "ocaml@4.6.6"
       ]
     },
     "@opam/ocamlbuild@opam:0.12.0": {
@@ -195,7 +195,7 @@
           }
         }
       },
-      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.5" ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.6" ]
     },
     "@opam/mccs@opam:1.1+8": {
       "record": {
@@ -214,7 +214,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/cudf@opam:0.9",
-        "@opam/jbuilder@opam:transition", "ocaml@4.6.5"
+        "@opam/jbuilder@opam:transition", "ocaml@4.6.6"
       ]
     },
     "@opam/jbuilder@opam:transition": {
@@ -233,7 +233,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/dune@opam:1.2.1",
-        "@opam/ocamlfind@opam:1.8.0", "ocaml@4.6.5"
+        "@opam/ocamlfind@opam:1.8.0", "ocaml@4.6.6"
       ]
     },
     "@opam/extlib-compat@opam:1.7.2": {
@@ -255,7 +255,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/base-bytes@opam:base",
-        "@opam/cppo@opam:1.6.5", "@opam/ocamlfind@opam:1.8.0", "ocaml@4.6.5"
+        "@opam/cppo@opam:1.6.5", "@opam/ocamlfind@opam:1.8.0", "ocaml@4.6.6"
       ]
     },
     "@opam/easy-format@opam:1.3.1": {
@@ -275,7 +275,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/jbuilder@opam:transition",
-        "ocaml@4.6.5"
+        "ocaml@4.6.6"
       ]
     },
     "@opam/dune@opam:1.2.1": {
@@ -298,7 +298,7 @@
           }
         }
       },
-      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.5" ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.6" ]
     },
     "@opam/cudf@opam:0.9": {
       "record": {
@@ -318,7 +318,7 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/conf-perl@opam:1",
         "@opam/extlib-compat@opam:1.7.2", "@opam/ocamlbuild@opam:0.12.0",
-        "ocaml@4.6.5"
+        "ocaml@4.6.6"
       ]
     },
     "@opam/cppo@opam:1.6.5": {
@@ -338,7 +338,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/base-unix@opam:base",
-        "@opam/jbuilder@opam:transition", "ocaml@4.6.5"
+        "@opam/jbuilder@opam:transition", "ocaml@4.6.6"
       ]
     },
     "@opam/conf-which@opam:1": {
@@ -355,7 +355,7 @@
           "override": null
         }
       },
-      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.5" ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.6" ]
     },
     "@opam/conf-perl@opam:1": {
       "record": {
@@ -371,7 +371,7 @@
           "override": null
         }
       },
-      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.5" ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.6" ]
     },
     "@opam/conf-m4@opam:1": {
       "record": {
@@ -387,7 +387,7 @@
           "override": null
         }
       },
-      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.5" ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.6" ]
     },
     "@opam/cmdliner@opam:1.0.2": {
       "record": {
@@ -407,7 +407,7 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
         "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3",
-        "@opam/topkg@opam:0.9.1", "ocaml@4.6.5"
+        "@opam/topkg@opam:0.9.1", "ocaml@4.6.6"
       ]
     },
     "@opam/biniou@opam:1.2.0": {
@@ -428,7 +428,7 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/conf-which@opam:1",
         "@opam/easy-format@opam:1.3.1", "@opam/jbuilder@opam:transition",
-        "ocaml@4.6.5"
+        "ocaml@4.6.6"
       ]
     },
     "@opam/base-unix@opam:base": {
@@ -445,7 +445,7 @@
           "override": null
         }
       },
-      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.5" ]
+      "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.6" ]
     },
     "@opam/base-bytes@opam:base": {
       "record": {
@@ -463,7 +463,7 @@
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlfind@opam:1.8.0",
-        "ocaml@4.6.5"
+        "ocaml@4.6.6"
       ]
     },
     "@esy-ocaml/substs@0.0.1": {
