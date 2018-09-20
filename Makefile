@@ -1,7 +1,7 @@
 .DEFAULT_GOAL: bootstrap
 .DELETE_ON_ERROR:
 
-PLATFORM = $(shell uname | tr '[A-Z]' '[a-z]')
+PLATFORM = $(shell node -p "process.platform")
 VERSION = $(shell node -p "require('./package.json').version")
 NPM_RELEASE_TAG ?= latest
 ESY_RELEASE_TAG ?= v$(VERSION)
