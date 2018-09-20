@@ -21,4 +21,16 @@ artifacts:
       name: Windows Build
       type: File
 
+deploy:
+    - provider: GitHub
+      repository: andreypopp/esy-solve-cudf
+      auth_token:
+          secure: TODO
+      draft: false
+      prerelease: false
+      force_update: true
+      on:
+          appveyor_repo_tag: true
+
+
 test: off
