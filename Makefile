@@ -53,6 +53,7 @@ RELEASE_ROOT = _release
 RELEASE_FILES = \
 	platform-linux \
 	platform-darwin \
+	platform-win32 \
 	esySolveCudfCommand.exe \
 	postinstall.js \
 	LICENSE \
@@ -70,8 +71,8 @@ $(RELEASE_ROOT)/esySolveCudfCommand.exe:
 	@echo "#!/bin/sh\necho 'error: esy-solve-cudf is not installed correctly...'; exit 1" > $(@)
 	@chmod +x $(@)
 
-$(RELEASE_ROOT)/platform-linux $(RELEASE_ROOT)/platform-darwin: PLATFORM=$(@:$(RELEASE_ROOT)/platform-%=%)
-$(RELEASE_ROOT)/platform-linux $(RELEASE_ROOT)/platform-darwin:
+$(RELEASE_ROOT)/platform-linux $(RELEASE_ROOT)/platform-darwin $(RELEASE_ROOT)/platform-win32: PLATFORM=$(@:$(RELEASE_ROOT)/platform-%=%)
+$(RELEASE_ROOT)/platform-linux $(RELEASE_ROOT)/platform-darwin $(RELEASE_ROOT)/platform-win32:
 	@mkdir $(@)
 	@wget \
 		-q --show-progress \
