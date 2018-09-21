@@ -1,0 +1,36 @@
+platform:
+    - x64
+
+cache:
+    - C:\Users\appveyor\.esy
+
+install:
+    # The x64 is required as a workaround for esy/esy#412
+    - ps: Install-Product node 8 x64
+    - npm install -g esy-bash@0.1.23
+    - npm install -g esy@0.2.11
+    # Retry is necessary due to esy/esy#413 and esy/esy#414
+    - appveyor-retry esy install
+
+build_script:
+    - esy build
+    - esy-bash make platform-release
+
+artifacts:
+    - path: _platformrelease/*.tgz
+      name: Windows Build
+      type: File
+
+deploy:
+    - provider: GitHub
+      repository: andreypopp/esy-solve-cudf
+      auth_token:
+          secure: gXfLlzwPxmCpC4YA3flpfEpwnXPseJMCmH7y4vaRTlbb41ntkFczlftZFwiWYE65
+      draft: false
+      prerelease: false
+      force_update: true
+      on:
+          appveyor_repo_tag: true
+
+
+test: off

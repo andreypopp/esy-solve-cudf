@@ -13,11 +13,13 @@
     "buildsInSource": "_build"
   },
   "dependencies": {
-    "@esy-ocaml/esy-installer": "^0.0.0",
     "@opam/cmdliner": "^1.0.2",
     "@opam/jbuilder": "*",
     "@opam/cudf": "*",
     "@opam/mccs": "*"
+  },
+  "resolutions": {
+    "@esy-ocaml/esy-installer": "0.0.1"
   },
   "peerDependencies": {
     "ocaml": "~4.6.0"

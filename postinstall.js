@@ -16,6 +16,8 @@ switch (platform) {
     install('esySolveCudfCommand.exe');
     fs.chmodSync(path.join(__dirname, 'esySolveCudfCommand.exe'), 0755);
     break
+  case 'win32':
+    install('esySolveCudfCommand.exe');
   default:
     console.warn('[esy-solve-cudf] Unsupported operating system; dependent commands may not function correctly')
     break;
