@@ -15,9 +15,11 @@ switch (platform) {
   case 'darwin':
     install('esySolveCudfCommand.exe');
     fs.chmodSync(path.join(__dirname, 'esySolveCudfCommand.exe'), 0755);
-    break
+    break;
   case 'win32':
     install('esySolveCudfCommand.exe');
+    // chmod doesn't make sense on win32
+    break;
   default:
     console.warn('[esy-solve-cudf] Unsupported operating system; dependent commands may not function correctly')
     break;
