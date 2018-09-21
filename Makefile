@@ -9,7 +9,7 @@ ESY_EXT := $(shell command -v esy 2> /dev/null)
 
 b:: build-dev
 build-dev::
-	@esy b jbuilder build -j 4 --dev
+	@esy b dune build
 build::
 	@esy b
 
@@ -17,8 +17,7 @@ bootstrap::
 ifndef ESY_EXT
 	$(error "esy command is not avaialble, run 'npm install -g esy'")
 endif
-	@esy install
-	@esy build
+	@esy
 
 clean::
 	@rm -rf _build

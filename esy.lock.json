@@ -1,5 +1,5 @@
 {
-  "hash": "61c0c2ec86ad0df327be2d828dab3b3a",
+  "hash": "3318c3c28dc30473d4b35c43cf1382dc",
   "root": "esy-solve-cudf@path:.",
   "node": {
     "ocaml@4.6.6": {
@@ -23,7 +23,7 @@
       },
       "dependencies": [
         "@esy-ocaml/merlin@3.0.5005", "@opam/cmdliner@opam:1.0.2",
-        "@opam/cudf@opam:0.9", "@opam/jbuilder@opam:transition",
+        "@opam/cudf@opam:0.9", "@opam/dune@opam:1.2.1",
         "@opam/mccs@opam:1.1+8", "ocaml@4.6.6"
       ]
     },
