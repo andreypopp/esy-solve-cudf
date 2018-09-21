@@ -1,7 +1,0 @@
-(jbuild_version 1)
-
-(executable
- ((name esySolveCudfCommand)
-  (package esy-solve-cudf)
-  (public_name esy-solve-cudf)
-  (libraries (cudf mccs cmdliner))))
