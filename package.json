@@ -1,6 +1,6 @@
 {
   "name": "esy-solve-cudf",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Solver command for esy based on mccs",
   "license": "GPLv3",
   "esy": {
