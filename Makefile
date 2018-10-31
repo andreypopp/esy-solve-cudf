@@ -42,7 +42,7 @@ $(PLATFORM_RELEASE_NAME)::
 	@tar czf $(@) -C $(PLATFORM_RELEASE_ROOT) .
 	@rm -rf $(PLATFORM_RELEASE_ROOT)
 
-$(PLATFORM_RELEASE_ROOT)/esySolveCudfCommand.exe: _build/default/bin/esySolveCudfCommand.exe
+$(PLATFORM_RELEASE_ROOT)/esySolveCudfCommand.exe: _esy/default/build/default/bin/esySolveCudfCommand.exe
 	@mkdir -p $(@D)
 	@cp $(<) $(@)
 
