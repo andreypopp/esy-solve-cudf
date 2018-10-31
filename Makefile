@@ -17,6 +17,8 @@ bootstrap::
 ifndef ESY_EXT
 	$(error "esy command is not avaialble, run 'npm install -g esy'")
 endif
+	@git submodule init
+	@git submodule update
 	@esy
 
 clean::
