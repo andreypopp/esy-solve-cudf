@@ -1,0 +1,3 @@
+[submodule "mccs"]
+	path = mccs
+	url = https://github.com/andreypopp/ocaml-mccs

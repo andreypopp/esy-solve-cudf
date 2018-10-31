@@ -3,4 +3,5 @@ esy-solve-cudf.install
 _build
 _release
 _platformrelease
+_esy
 node_modules

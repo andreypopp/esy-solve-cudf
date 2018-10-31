@@ -1,7 +1,21 @@
 {
-  "hash": "3318c3c28dc30473d4b35c43cf1382dc",
-  "root": "esy-solve-cudf@path:.",
+  "hash": "1cd29f6f7be09c95cefd63d2a57a5fe1",
+  "root": "root@path:./package.json",
   "node": {
+    "root@path:./package.json": {
+      "record": {
+        "name": "root",
+        "version": "path:./package.json",
+        "source": "path:./package.json",
+        "files": [],
+        "opam": null
+      },
+      "dependencies": [
+        "@esy-ocaml/merlin@3.0.5005", "@opam/cmdliner@opam:1.0.2",
+        "@opam/cudf@opam:0.9", "@opam/dune@opam:1.4.0",
+        "@opam/mccs@link:mccs/mccs.opam", "ocaml@4.6.7"
+      ]
+    },
     "ocaml@4.6.7": {
       "record": {
         "name": "ocaml",
@@ -12,20 +26,6 @@
         "opam": null
       },
       "dependencies": []
-    },
-    "esy-solve-cudf@path:.": {
-      "record": {
-        "name": "esy-solve-cudf",
-        "version": "path:.",
-        "source": "path:.",
-        "files": [],
-        "opam": null
-      },
-      "dependencies": [
-        "@esy-ocaml/merlin@3.0.5005", "@opam/cmdliner@opam:1.0.2",
-        "@opam/cudf@opam:0.9", "@opam/dune@opam:1.4.0",
-        "@opam/mccs@opam:1.1+9", "ocaml@4.6.7"
-      ]
     },
     "@opam/yojson@opam:1.4.1": {
       "record": {
@@ -144,7 +144,8 @@
             "exportedEnv": {
               "OCAML_TOPLEVEL_PATH": {
                 "val": "#{self.toplevel}",
-                "scope": "global"
+                "scope": "global",
+                "exclusive": false
               }
             }
           }
@@ -196,24 +197,23 @@
       },
       "dependencies": [ "@esy-ocaml/substs@0.0.1", "ocaml@4.6.7" ]
     },
-    "@opam/mccs@opam:1.1+9": {
+    "@opam/mccs@link:mccs/mccs.opam": {
       "record": {
         "name": "@opam/mccs",
-        "version": "opam:1.1+9",
-        "source":
-          "archive:https://github.com/AltGr/ocaml-mccs/archive/1.1+9.tar.gz#md5:95aabb806fe6cbfab92a98b2a88d79c3",
+        "version": "link:mccs/mccs.opam",
+        "source": "link:mccs/mccs.opam",
         "files": [],
         "opam": {
           "name": "mccs",
-          "version": "1.1+9",
+          "version": "dev",
           "opam":
-            "opam-version: \"2.0\"\nname: \"mccs\"\nversion: \"1.1+9\"\nmaintainer: \"Louis Gesbert <louis.gesbert@ocamlpro.com>\"\nauthors: [\n  \"Claude Michel <claude.michel@unice.fr>\"\n  \"Louis Gesbert <louis.gesbert@ocamlpro.com>\"\n]\nlicense: \"LGPL-2.1 with OCaml linking exception, BSD-3-clause, GPL-3.0\"\nhomepage: \"http://www.i3s.unice.fr/~cpjm/misc/\"\nbug-reports: \"https://github.com/AltGr/ocaml-mccs/issues\"\ndepends: [\n  \"ocaml\"\n  \"jbuilder\" {build}\n  \"cudf\" {>= \"0.7\"}\n]\nbuild: [\n  [\"jbuilder\" \"build\" \"-p\" name]\n  [\"sh\" \"-c\" \"jbuilder build @settests --auto-promote || true\"] {with-test}\n  [\"jbuilder\" \"runtest\"] {with-test}\n]\ndev-repo: \"git+https://github.com/AltGr/ocaml-mccs.git\"\nurl {\n  src: \"https://github.com/AltGr/ocaml-mccs/archive/1.1+9.tar.gz\"\n  checksum: [\n    \"md5=95aabb806fe6cbfab92a98b2a88d79c3\"\n    \"sha512=f3327290ace029f2a17e4270d1395238d9adad183f7ea2027efea0b68205b0ace52645556d4e079d6f49ebd943808e2b68c78f00914eb2d557bf18e782376650\"\n  ]\n}",
+            "opam-version: \"1.2\"\nversion: \"1.1+9\"\nmaintainer: \"Louis Gesbert <louis.gesbert@ocamlpro.com>\"\nauthors: [\n  \"Claude Michel <claude.michel@unice.fr>\"\n  \"Louis Gesbert <louis.gesbert@ocamlpro.com>\"\n]\nlicense: \"LGPL-2.1 with OCaml linking exception, BSD-3-clause, GPL-3.0\"\nhomepage: \"http://www.i3s.unice.fr/~cpjm/misc/\"\nbug-reports: \"https://github.com/AltGr/ocaml-mccs/issues\"\ndepends: [\n  \"jbuilder\" {build}\n  \"cudf\" {>= \"0.7\"}\n]\nbuild: [\"jbuilder\" \"build\" \"-p\" name]\nrun-test: [\n  [\"sh\" \"-c\" \"jbuilder build @settests --auto-promote || true\"]\n  [\"jbuilder\" \"runtest\"]\n]\ndev-repo: \"git+https://github.com/AltGr/ocaml-mccs.git\"",
           "override": null
         }
       },
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/cudf@opam:0.9",
-        "@opam/jbuilder@opam:transition", "ocaml@4.6.7"
+        "@opam/jbuilder@opam:transition"
       ]
     },
     "@opam/jbuilder@opam:transition": {
@@ -485,16 +485,16 @@
         "opam": null
       },
       "dependencies": [
-        "@esy-ocaml/esy-installer@0.0.1", "@esy-ocaml/substs@0.0.1",
+        "@esy-ocaml/esy-installer@0.0.0", "@esy-ocaml/substs@0.0.1",
         "@opam/ocamlfind@opam:1.8.0", "@opam/yojson@opam:1.4.1"
       ]
     },
-    "@esy-ocaml/esy-installer@0.0.1": {
+    "@esy-ocaml/esy-installer@0.0.0": {
       "record": {
         "name": "@esy-ocaml/esy-installer",
-        "version": "0.0.1",
+        "version": "0.0.0",
         "source":
-          "archive:https://registry.npmjs.org/@esy-ocaml/esy-installer/-/esy-installer-0.0.1.tgz#sha1:420c65f7e5f9bafa3da578532c352acdf00837aa",
+          "archive:https://registry.npmjs.org/@esy-ocaml/esy-installer/-/esy-installer-0.0.0.tgz#sha1:6b0e2bd4ee43531ac74793fe55cfcc3aca197a66",
         "files": [],
         "opam": null
       },
