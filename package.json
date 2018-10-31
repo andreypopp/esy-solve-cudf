@@ -17,7 +17,7 @@
     "@opam/mccs": "link:./mccs/mccs.opam"
   },
   "devDependencies": {
-    "@esy-ocaml/merlin": "*",
+    "@opam/merlin": "*",
     "ocaml": "~4.6.0"
   }
 }
