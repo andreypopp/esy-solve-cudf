@@ -5,6 +5,8 @@ cache:
     - C:\Users\appveyor\.esy
 
 install:
+    - git submodule init
+    - git submodule update
     # The x64 is required as a workaround for esy/esy#412
     - ps: Install-Product node 8 x64
     - npm install -g esy@0.3.4
